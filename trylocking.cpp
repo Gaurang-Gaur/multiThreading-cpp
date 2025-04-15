@@ -9,17 +9,18 @@ void addMoney(){
     // m.lock();
     
     for(int i=0;i<10000;i++){
-    if(m.try_lock()){
+    // if(m.try_lock()){
         
     ++addmoney;
-    m.unlock();
-    }
+    // m.unlock();
+    // }
     }
    
 }
 
 
 int main(){
+    // addmoney()
     thread t1(addMoney);
     thread t2(addMoney);
     t1.join();
